@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------
 # Arquivo para o Vídeo Problemas em Python 02
 # Disponivel em https://www.youtube.com/watch?v=fJKdHJuTlHw
-# Fernando Anselmo
+# Autor: Fernando Anselmo
 # Compilado com Python 3.5.1
 # -----------------------------------------------------------------
 
