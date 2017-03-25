@@ -9,7 +9,8 @@ class Leitura:
         self.url = ''
 
     def montagem(self):
-        entrada = open(self.caminho + self.nomeArq + '.eml', 'r+')
+        # Se for Python 3 devemos substituir a seguinte linha para:
+        entrada = open(self.caminho + self.nomeArq + '.eml', 'r+', encoding = "ISO-8859-1")
         saida = open(self.caminho + self.nomeArq + '.html', 'w')
         inicia = False
         mostra1 = True
