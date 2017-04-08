@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 
+# -----------------------------------------------------------------
+# Arquivo para o Vídeo Problemas em Python 03
+# Disponivel em https://www.youtube.com/watch?v=w-24ojvvvuM&t=25s
+# Autor: Fernando Anselmo
+# Compilado com Python 3.5.1
+# -----------------------------------------------------------------
+
 import requests
 
 def montarIngredientes(linha):
