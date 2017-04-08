@@ -23,10 +23,10 @@ def montarPreparacao(linha):
         if len(prep[0:prep.find('</')].strip()) > 0:
             prep = ' "' + prep[0:prep.find('</')].strip() + '",'
             print(prep)
-    print("]")
+    print("]}")
 
 def montarTitulo(linha):
-    linha = '"titulo":"' + linha + '", '
+    linha = '{"titulo":"' + linha + '", '
     print(linha)
 
 def lerSite():
