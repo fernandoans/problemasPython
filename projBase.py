@@ -87,8 +87,3 @@ def exemploBD():
 
 if __name__ == "__main__":
     exemploBD()
-
-
-
-
-
