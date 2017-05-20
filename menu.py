@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # -----------------------------------------------------------------
-# Arquivo para o Vídeo Problemas em Python 10
+# Arquivo para o Vídeo Problemas em Python 10 - Aplicação 01
 # Disponivel em https://youtu.be/ishz_YHogxs
 # Autor: Fernando Anselmo
 # Compilado com Python 3.5.1
