@@ -10,6 +10,7 @@
 from tkinter import *
 import tkinter.filedialog
 import tkinter.messagebox
+from venda import Venda
 
 NOME_APP = "Aplicação"
 root = Tk()
@@ -19,7 +20,11 @@ def sair(event=None):
         root.destroy()
 
 def showJanela(event=None):
-    tkinter.messagebox.showinfo("Opção 1", "Esta é uma opção", icon='info')
+    window = tkinter.Toplevel(root)
+    window.title("Registro de Vendas")
+    window.geometry("400x230")
+    Venda(window)
+    root.mainloop()
 
 def showSobre(event=None):
     tkinter.messagebox.showinfo("Sobre",
@@ -33,7 +38,7 @@ def montarMenu():
     menu_bar.add_cascade(label='Arquivo', underline=0, menu=arq_menu)
     menu_bar.add_cascade(label='Auxílio', underline=0, menu=aux_menu)
     root.config(menu=menu_bar)
-    arq_menu.add_command(label='Opção 1', compound='left', command=showJanela)
+    arq_menu.add_command(label='Venda', compound='left', command=showJanela)
     arq_menu.add_separator()
     arq_menu.add_command(label='Sair', accelerator='Alt+F4', compound='left', command=sair)
     aux_menu.add_command(label='Sobre...', compound='left', command=showSobre)
