@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # -----------------------------------------------------------------
-# Arquivo para o Vídeo Problemas em Python 10 - Aplicação 01
+# Arquivo para o Vídeo Problemas em Python 10 - Aplicação Venda
+# Menu Principal do Sistema
 # Disponivel em https://youtu.be/ishz_YHogxs
 # Autor: Fernando Anselmo
 # Compilado com Python 3.5.1
@@ -23,8 +24,9 @@ def showJanela(event=None):
     window = tkinter.Toplevel(root)
     window.title("Registro de Vendas")
     window.geometry("400x230")
+    window.transient(root)
     Venda(window)
-    root.mainloop()
+    root.wait_window(window)
 
 def showSobre(event=None):
     tkinter.messagebox.showinfo("Sobre",
