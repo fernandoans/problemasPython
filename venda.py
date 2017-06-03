@@ -1,5 +1,6 @@
 # -----------------------------------------------------------------
-# Arquivo para o Vídeo Problemas em Python 11 - Aplicação 01
+# Arquivo para o Vídeo Problemas em Python 11 - Aplicação Venda
+# Tela de Vendas
 # Disponivel em https://youtu.be/rdPL5v-RwOs
 # Autor: Fernando Anselmo
 # Compilado com Python 3.5.1
