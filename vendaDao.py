@@ -1,11 +1,12 @@
 # -----------------------------------------------------------------
-# Arquivo para o Vídeo Problemas em Python 12 - Aplicação Venda
+# Arquivo para o Vídeo Problemas em Python 12 e 13 - Aplicação Venda
 # Conexao com o Banco de Dados
-# Disponivel em https://www.youtube.com/watch?v=OJ60fyX8Imo
+# Disponivel em:
+#  https://youtu.be/OJ60fyX8Imo
+#  https://youtu.be/SDT8tzUG2Ek
 # Autor: Fernando Anselmo
 # Compilado com Python 3.5.1
 # -----------------------------------------------------------------
-
 
 import MySQLdb
 
@@ -40,6 +41,30 @@ class Venda(object):
             self.produto + "', '" + self.vendedor + "', " +
             self.valUnitario + ", " + self.quantidade + ", '" +
             self.unidade + "', NOW(), NOW())"
+        )
+        banco.db.commit()
+        banco.desconectar()
+
+    def alterarVenda(self):
+        banco = Banco()
+        banco.conectar()
+        banco.cur.execute(
+            "UPDATE venda SET produto = '" + self.produto + "', " +
+            "vendedor = '" + self.vendedor + "', " +
+            "valUnitario = " + self.valUnitario + ", " +
+            "quantidade = " + self.quantidade + ", " +
+            "unidade = '" + self.unidade + "', " +
+            "updatedAt = NOW() WHERE id = " + str(self.id)
+        )
+        banco.db.commit()
+        banco.desconectar()
+
+    def excluirVenda(self):
+        banco = Banco()
+        banco.conectar()
+        banco.cur.execute(
+            "DELETE FROM venda " +
+            "WHERE id = " + str(self.id)
         )
         banco.db.commit()
         banco.desconectar()
