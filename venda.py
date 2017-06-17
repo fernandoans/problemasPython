@@ -1,13 +1,16 @@
 # -----------------------------------------------------------------
-# Arquivo para o Vídeo Problemas em Python 11 - Aplicação Venda
+# Arquivo para o Vídeo Problemas em Python 11 e 14 - Aplicação Venda
 # Tela de Vendas
 # Disponivel em https://youtu.be/rdPL5v-RwOs
+# Finalizada em https://youtu.be/436lM99wRhY (junção com a DAO)
 # Autor: Fernando Anselmo
 # Compilado com Python 3.5.1
 # -----------------------------------------------------------------
 
 from tkinter import *
-import tkinter.messagebox
+from vendaDao import Venda
+
+vendaDao = Venda()
 
 class Venda:
     def __init__(self, master=None):
@@ -71,23 +74,50 @@ class Venda:
         self.btnexcluir.pack(side=RIGHT, padx=10)
 
     def buscarVenda(self):
-        tkinter.messagebox.showinfo("Buscar", "Obtém a Venda", icon="info")
+        vendaDao.id = int(self.txtpin.get())
+        vendaDao.produto = ''
+        vendaDao.vendedor = ''
+        vendaDao.valUnitario = ''
+        vendaDao.quantidade = ''
+        vendaDao.unidade = ''
+        vendaDao.selecionarVenda()
+        self.carregarCampos()
 
     def inserirVenda(self):
-        tkinter.messagebox.showinfo("Inserir", "Adiciona uma Venda", icon="info")
+        self.carregarObjeto()
+        vendaDao.inserirVenda()
+        self.limparCampos()
 
     def alterarVenda(self):
-        tkinter.messagebox.showinfo("Modificar", "Modifica uma Venda", icon="info")
+        self.carregarObjeto()
+        vendaDao.alterarVenda()
+        self.limparCampos()
 
     def excluirVenda(self):
-        tkinter.messagebox.showinfo("Remover", "Elimina uma Venda", icon="info")
+        vendaDao.id = int(self.txtpin.get())
+        vendaDao.excluirVenda()
+        self.limparCampos()
 
+    def carregarObjeto(self):
+        vendaDao.produto = self.txtproduto.get()
+        vendaDao.vendedor = self.txtvendedor.get()
+        vendaDao.valUnitario = self.txtvalor.get()
+        vendaDao.quantidade = self.txtquantidade.get()
+        vendaDao.unidade = self.txtunidade.get()
 
+    def limparCampos(self):
+        self.txtproduto.delete(0, END)
+        self.txtvendedor.delete(0, END)
+        self.txtvalor.delete(0, END)
+        self.txtquantidade.delete(0, END)
+        self.txtunidade.delete(0, END)
 
-
-
-
-
+    def carregarCampos(self):
+        self.txtproduto.insert(INSERT, vendaDao.produto)
+        self.txtvendedor.insert(INSERT, vendaDao.vendedor)
+        self.txtvalor.insert(INSERT, vendaDao.valUnitario)
+        self.txtquantidade.insert(INSERT, vendaDao.quantidade)
+        self.txtunidade.insert(INSERT, vendaDao.unidade)
 
 
 
