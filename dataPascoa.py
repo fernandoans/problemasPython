@@ -9,6 +9,7 @@
 
 from datetime import date
 
+
 class Pascoa:
 
     def mostrar(self, mes):
@@ -18,9 +19,9 @@ class Pascoa:
         dtCN = date.fromordinal(dtPA.toordinal() - 47)
         # Corpus Christ ocorre 60 dias depois
         dtCC = date.fromordinal(dtPA.toordinal() + 60)
-        print("O Carnaval é em ", dtPA.strftime('%d/%m/%Y'))
-        print("a Páscoa em ", dtCN.strftime('%d/%m/%Y'))
-        print("e Corpus Christ em ", dtCC.strftime('%d/%m/%Y'))
+        print("O Carnaval em ", dtCN.strftime('%d/%m/%Y'))
+        print("A Páscoa em ", dtPA.strftime('%d/%m/%Y'))
+        print("E Corpus Christ em ", dtCC.strftime('%d/%m/%Y'))
 
     def obterAno(self):
         self.ano = int(input("Informe o Ano:"))
@@ -36,10 +37,12 @@ class Pascoa:
             self.dia = res + 22
             self.mostrar(3)
 
+
 def principal():
     pascoa = Pascoa()
     pascoa.obterAno()
     pascoa.realizarCalculo()
+
 
 if __name__ == '__main__':
     principal()
